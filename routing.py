@@ -33,7 +33,7 @@ def routing(ds_hice, ds_pointer, ds_lsm, mode_flux="m3/S", mode_lon="double",
     routed_flux_serie = np.zeros(
         (tmax, land_sea_mask.shape[0], land_sea_mask.shape[1]))
     
-    regridder = tb.hadcm3_regridding_method(ds_hice, ds_lsm, reuse_weights=True)
+    regridder = tb.hadcm3_regridding_method(ds_hice, ds_lsm, reuse_weights=False)
     
     for t in range(0, tmax):
         flux = hi_to_discharge(ds_hice, t, mode_flux)
